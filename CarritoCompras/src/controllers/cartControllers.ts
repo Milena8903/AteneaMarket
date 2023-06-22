@@ -12,9 +12,7 @@ import { Request, Response } from "express"
 const prisma = new PrismaClient()
 
 export const getCartProducts = async(req:Request, res:Response) => {
-    //To do retornar el listado de productos del carrito
-    //obtengo los elemenot
-    //To do: Filtrar los elementos
+    //To do retornar el listado de productos del carrito //obtengo los elemenot //To do: Filtrar los elementos
         try{//recomendable q siempre q se este consultando a una bd q tok esperar colocar el try-catch
             //para q no se afecte la aplicación y se pueda gestionar
             const cartProduct = await prisma.cart.findMany()
@@ -29,12 +27,9 @@ export const getCartProducts = async(req:Request, res:Response) => {
 }
 
 export const addProductToCart= async(req:Request, res:Response) => {
-    //To do agregar un producto al carrito
-    //enviar unos elementos
-    //desestructure el json q le llega en la petición
-    //Todo Verificar integridad del json
+    //To do agregar un producto al carrito //enviar unos elementos
+    //desestructure el json q le llega en la petición //Todo Verificar integridad del json
     const{productId, quantity} = req.body
-
     try{
         const cartProduct = await prisma.cart.create(
             //pasar los datos del registro lo q quiero guardar 
