@@ -5,16 +5,16 @@
 
  //creamos un conjunto de objetos donde exportamos como un modulo
 import express, { Application, NextFunction, Request, Response } from 'express'
-import rutas_ejemplo from './routes/rutas_ejemplo'
+import cartRoutes from './routes/CartRoutes'
 
 const app:Application = express()
-
+app.use(express.json())//procese un json cuando se haga las peticiones
 
 /**
  * Agregar al stack un conjunto de rutas
  */
 
-app.use('/', rutas_ejemplo)
+app.use('/', cartRoutes)
 
 
 /**
